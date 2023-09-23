@@ -1,0 +1,68 @@
+[user]
+	name = Dominik Bartsch
+	email = dominik.bartsch@gmx.net
+	username = domfoo
+
+[alias]
+	# list all git aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+	
+	# print a much nicer log
+	l = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+	# short status
+	st = status
+
+	# short add
+	a = add
+
+	# short add all
+	aa = add -A
+
+	# short commit
+	c = commit
+
+	# short commit with message
+	cm = commit -m
+
+	# short add all and commit with message
+	aacm = !git add -A && git commit -m
+	
+	# amend files without changing the commit message
+	patch = commit --amend --no-edit
+
+	# delete changes while still being able to recover them
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+	# short branch
+	br = branch
+
+	# soft delete branch
+	brd = branch -d
+
+	# force delete branch
+	brD = branch -D
+
+	# short switch
+	sw = switch
+	
+	# short restore
+	rs = restore
+	
+	# short push
+	p = push
+	
+	# push force with lease
+	pfl = push --force-with-lease
+	
+	# short rebase
+	rb = rebase
+	
+	# short interactive rebase
+	rbi = rebase -i
+[init]
+	defaultBranch = master
+[core]
+	pager = delta
+[delta]
+	side-by-side = true
